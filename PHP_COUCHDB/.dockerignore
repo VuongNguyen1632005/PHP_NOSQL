@@ -1,0 +1,10 @@
+.env
+.env.*
+.git
+.gitignore
+vendor
+# Local runtime files may contain demo credentials or exported source data.
+var/
+WEBTHOITRANG
+*.sln
+*.csproj

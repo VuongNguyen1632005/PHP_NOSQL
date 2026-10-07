@@ -1,0 +1,69 @@
+name: webthoitrang-php
+
+services:
+  couchdb:
+    image: couchdb:3.5.0
+    restart: unless-stopped
+    environment:
+      COUCHDB_USER: "${COUCHDB_USER:?Copy .env.example to .env and set COUCHDB_USER}"
+      COUCHDB_PASSWORD: "${COUCHDB_PASSWORD:?Set a unique COUCHDB_PASSWORD in .env}"
+    ports:
+      - "${COUCHDB_BIND_ADDRESS:-127.0.0.1}:${COUCHDB_PORT:-5984}:5984"
+    volumes:
+      - couchdb_data:/opt/couchdb/data
+    healthcheck:
+      test: ["CMD", "curl", "--fail", "--silent", "--show-error", "http://127.0.0.1:5984/_up"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 20s
+    networks:
+      - web
+
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    environment:
+      APP_ENV: "${APP_ENV:-development}"
+      COUCHDB_URL: http://couchdb:5984
+      COUCHDB_USER: "${COUCHDB_USER:?Set COUCHDB_USER in .env}"
+      COUCHDB_PASSWORD: "${COUCHDB_PASSWORD:?Set COUCHDB_PASSWORD in .env}"
+      COUCHDB_DATABASE: "${COUCHDB_DATABASE:-retail_order_delivery_test}"
+      JWT_SECRET: "${JWT_SECRET:?Set a random JWT_SECRET in .env}"
+      JWT_ISSUER: "${JWT_ISSUER:-http://localhost:8081}"
+      JWT_AUDIENCE: "${JWT_AUDIENCE:-webthoitrang-api}"
+      JWT_TTL_SECONDS: "${JWT_TTL_SECONDS:-900}"
+    ports:
+      - "127.0.0.1:${APP_PORT:-8081}:80"
+    volumes:
+      - .:/var/www/html
+      - php_vendor:/var/www/html/vendor
+      - php_uploads:/var/www/html/var/uploads
+      - php_sessions:/var/lib/php/sessions
+    depends_on:
+      couchdb:
+        condition: service_healthy
+    healthcheck:
+      test:
+        - CMD
+        - php
+        - -r
+        - "$$c=curl_init('http://127.0.0.1/health/ready'); curl_setopt_array($$c,[CURLOPT_RETURNTRANSFER=>true,CURLOPT_TIMEOUT=>4]); curl_exec($$c); $$s=(int)curl_getinfo($$c,CURLINFO_RESPONSE_CODE); curl_close($$c); exit($$s===200?0:1);"
+      interval: 30s
+      timeout: 5s
+      retries: 3
+      start_period: 10s
+    networks:
+      - web
+
+volumes:
+  couchdb_data:
+  php_vendor:
+  php_uploads:
+  php_sessions:
+
+networks:
+  web:
+    driver: bridge

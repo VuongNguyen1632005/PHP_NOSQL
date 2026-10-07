@@ -1,0 +1,11 @@
+{
+  "selector": {
+    "type": {"$eq": "order"},
+    "customer.customer_id": {"$eq": "P06-001"}
+  },
+  "use_index": ["_design/catalog_indexes", "customer_orders"],
+  "sort": [{"ordered_at": "desc"}],
+  "fields": ["_id", "status", "ordered_at", "totals", "payment"],
+  "limit": 20,
+  "execution_stats": true
+}

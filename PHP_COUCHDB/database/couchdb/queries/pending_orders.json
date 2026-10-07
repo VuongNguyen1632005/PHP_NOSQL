@@ -1,0 +1,15 @@
+{
+  "name": "pending_orders",
+  "description": "Đơn chờ xác nhận cho màn hình quản trị, dùng Mango index admin_orders.",
+  "expected_index": "admin_orders",
+  "request": {
+    "selector": {
+      "type": {"$eq": "order"},
+      "status": {"$eq": "pending"}
+    },
+    "use_index": ["_design/catalog_indexes", "admin_orders"],
+    "sort": [{"ordered_at": "desc"}],
+    "fields": ["_id", "legacy_id", "status", "ordered_at", "totals"],
+    "limit": 10
+  }
+}

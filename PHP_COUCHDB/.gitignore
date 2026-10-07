@@ -1,0 +1,8 @@
+.env
+.env.*
+!.env.example
+/vendor/
+/var/uploads/
+/var/backups/
+/var/migration-exports/
+/var/phase06_demo_credentials.txt

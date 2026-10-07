@@ -1,0 +1,523 @@
+openapi: 3.0.3
+info:
+  title: WEBTHOITRANG API
+  version: 1.0.0
+  description: >-
+    JSON API for the PHP/CouchDB rewrite. Customer operations require a customer
+    JWT; order administration and revenue require staff or manager JWTs.
+servers:
+  - url: http://localhost:8081
+    description: Local Docker development
+tags:
+  - name: Auth
+  - name: Catalog
+  - name: Customer
+  - name: Staff
+security:
+  - bearerAuth: []
+paths:
+  /api/auth/token:
+    post:
+      tags: [Auth]
+      summary: Issue an access token
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [username, password]
+              properties:
+                username: { type: string, description: Account email or username }
+                password: { type: string, format: password }
+      responses:
+        '200':
+          description: Access token issued
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [access_token, token_type, expires_in]
+                properties:
+                  access_token: { type: string }
+                  token_type: { type: string, example: Bearer }
+                  expires_in: { type: integer, example: 900 }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+  /api/v1/me:
+    get:
+      tags: [Auth]
+      summary: Get the current account
+      responses:
+        '200':
+          description: Current account summary
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/AccountSummary' }
+        '401': { $ref: '#/components/responses/Error' }
+  /api/v1/products:
+    get:
+      tags: [Catalog]
+      summary: Search and page active products
+      security: []
+      parameters:
+        - { name: search, in: query, schema: { type: string, maxLength: 100 } }
+        - { name: category, in: query, schema: { type: string, maxLength: 80 } }
+        - { name: min_price, in: query, schema: { type: number, minimum: 0 } }
+        - { name: max_price, in: query, schema: { type: number, minimum: 0 } }
+        - { name: sort, in: query, schema: { type: string, enum: [default, price_asc, price_desc, rating], default: default } }
+        - { name: page, in: query, schema: { type: integer, minimum: 1, default: 1 } }
+        - { name: page_size, in: query, schema: { type: integer, minimum: 1, maximum: 50, default: 16 } }
+      responses:
+        '200':
+          description: Product page
+          content:
+            application/json:
+              schema:
+                type: object
+                required: [data, pagination]
+                properties:
+                  data: { type: array, items: { $ref: '#/components/schemas/Product' } }
+                  pagination: { $ref: '#/components/schemas/PageInfo' }
+        '400': { $ref: '#/components/responses/Error' }
+  /api/v1/products/{id}:
+    get:
+      tags: [Catalog]
+      summary: Get product details, public reviews, and related products
+      security: []
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200': { description: Product detail with reviews and related products }
+        '404': { $ref: '#/components/responses/Error' }
+  /api/v1/products/{id}/reviews:
+    post:
+      tags: [Customer]
+      summary: Submit one review for a product
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [rating, content]
+              properties:
+                rating: { type: integer, minimum: 1, maximum: 5 }
+                content: { type: string, minLength: 1, maxLength: 2000 }
+      responses:
+        '201': { description: Review created; reviewer identity comes from the token }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/v1/orders:
+    get:
+      tags: [Customer]
+      summary: List the authenticated customer's orders
+      parameters:
+        - $ref: '#/components/parameters/cursor'
+      responses:
+        '200': { $ref: '#/components/responses/OrderPage' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+  /api/v1/orders/{id}:
+    get:
+      tags: [Customer]
+      summary: Get an order owned by the authenticated customer
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: Public order detail, including tracking history when present
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/OrderDetail' }
+        '401': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+  /api/v1/orders/{id}/confirm-received:
+    post:
+      tags: [Customer]
+      summary: Confirm receipt of an order currently shipping
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200': { description: Order delivered; COD is recorded as paid }
+        '401': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/v1/cart:
+    get:
+      tags: [Customer]
+      summary: Get the authenticated customer's cart
+      responses:
+        '200': { description: Cart lines and selected subtotal }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+  /api/v1/cart/items:
+    post:
+      tags: [Customer]
+      summary: Add an available product variant to the cart
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [product_id, variant_id, quantity]
+              properties:
+                product_id: { type: string }
+                variant_id: { type: string }
+                quantity: { type: integer, minimum: 1 }
+      responses:
+        '200': { description: Updated cart }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/v1/cart/items/update:
+    post:
+      tags: [Customer]
+      summary: Change a cart line quantity
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [variant_id, quantity]
+              properties:
+                variant_id: { type: string }
+                quantity: { type: integer, minimum: 1 }
+      responses:
+        '200': { description: Updated cart }
+        '401': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/v1/cart/items/select:
+    post:
+      tags: [Customer]
+      summary: Select or deselect a cart line
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [variant_id, selected]
+              properties:
+                variant_id: { type: string }
+                selected: { type: boolean }
+      responses:
+        '200': { description: Updated cart }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+  /api/v1/cart/items/select-all:
+    post:
+      tags: [Customer]
+      summary: Select or deselect all cart lines
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [selected]
+              properties:
+                selected: { type: boolean }
+      responses:
+        '200': { description: Updated cart }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+  /api/v1/cart/items/change-size:
+    post:
+      tags: [Customer]
+      summary: Change a cart line to another variant
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [old_variant_id, new_variant_id]
+              properties:
+                old_variant_id: { type: string }
+                new_variant_id: { type: string }
+      responses:
+        '200': { description: Updated cart }
+        '401': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/v1/cart/items/remove:
+    post:
+      tags: [Customer]
+      summary: Remove a cart line
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [variant_id]
+              properties:
+                variant_id: { type: string }
+      responses:
+        '200': { description: Updated cart }
+        '401': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/v1/checkout/preview:
+    post:
+      tags: [Customer]
+      summary: Recalculate cart, shipping, voucher, and total
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CheckoutOptions'
+      responses:
+        '200': { description: Current checkout quote }
+        '401': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/v1/checkout:
+    post:
+      tags: [Customer]
+      summary: Create an idempotent COD order from the selected cart lines
+      parameters:
+        - name: Idempotency-Key
+          in: header
+          required: true
+          schema: { type: string, pattern: '^[a-f0-9]{32}$' }
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              allOf:
+                - $ref: '#/components/schemas/CheckoutOptions'
+                - type: object
+                  required: [receiver]
+                  properties:
+                    receiver:
+                      type: object
+                      properties:
+                        name: { type: string }
+                        phone: { type: string }
+                        email: { type: string, format: email }
+                        address: { type: string }
+                        note: { type: string }
+      responses:
+        '201': { description: Order created or idempotent replay returned }
+        '400': { $ref: '#/components/responses/Error' }
+        '401': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/admin/orders:
+    get:
+      tags: [Staff]
+      summary: List orders for staff
+      parameters:
+        - $ref: '#/components/parameters/cursor'
+        - name: status
+          in: query
+          schema: { type: string, enum: [pending, confirmed, packing, shipping, delivered, cancelled] }
+      responses:
+        '200': { $ref: '#/components/responses/OrderPage' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+  /api/admin/orders/{id}:
+    get:
+      tags: [Staff]
+      summary: Get an order for staff
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200':
+          description: Allowlisted order detail
+          content:
+            application/json:
+              schema: { $ref: '#/components/schemas/OrderDetail' }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+  /api/admin/orders/{id}/status:
+    post:
+      tags: [Staff]
+      summary: Apply a valid staff order status transition
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status]
+              properties:
+                status: { type: string, enum: [confirmed, packing, shipping, delivered, cancelled] }
+      responses:
+        '200': { description: Updated order summary }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/admin/orders/{id}/delivery:
+    post:
+      tags: [Staff]
+      summary: Update delivery progress for a shipping order
+      parameters:
+        - $ref: '#/components/parameters/id'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              required: [status]
+              properties:
+                status: { type: string, enum: [created, picked_up, in_transit, out_for_delivery, delivered, failed_delivery] }
+                note: { type: string, maxLength: 500 }
+      responses:
+        '200': { description: Updated allowlisted order detail, including delivery tracking history }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '404': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/admin/orders/{id}/payment/cod-collected:
+    post:
+      tags: [Staff]
+      summary: Record cash collected for a delivered COD order
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200': { description: Updated order summary }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/admin/orders/{id}/payment/verify:
+    post:
+      tags: [Staff]
+      summary: Manually verify bank transfer or card payment after external reconciliation
+      parameters:
+        - $ref: '#/components/parameters/id'
+      responses:
+        '200': { description: Updated order summary }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+        '422': { $ref: '#/components/responses/Error' }
+  /api/admin/revenue/stats:
+    get:
+      tags: [Staff]
+      summary: Get revenue and order summary metrics
+      responses:
+        '200': { description: Revenue metrics for delivered orders }
+        '401': { $ref: '#/components/responses/Error' }
+        '403': { $ref: '#/components/responses/Error' }
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  parameters:
+    id:
+      name: id
+      in: path
+      required: true
+      schema: { type: string }
+    cursor:
+      name: cursor
+      in: query
+      schema: { type: string, maxLength: 4096 }
+  responses:
+    Error:
+      description: JSON API error
+      content:
+        application/json:
+          schema: { $ref: '#/components/schemas/Error' }
+    OrderPage:
+      description: Cursor-paginated order list
+      content:
+        application/json:
+          schema:
+            type: object
+            required: [data, next_cursor]
+            properties:
+              data: { type: array, items: { $ref: '#/components/schemas/OrderSummary' } }
+              next_cursor: { type: string, nullable: true }
+  schemas:
+    Error:
+      type: object
+      required: [error]
+      properties:
+        error: { type: string }
+    AccountSummary:
+      type: object
+      properties:
+        id: { type: string }
+        type: { type: string, enum: [customer, staff] }
+        username: { type: string }
+        name: { type: string }
+        role: { type: string, enum: [customer, staff, manager] }
+    PageInfo:
+      type: object
+      properties:
+        page: { type: integer }
+        page_size: { type: integer }
+        total: { type: integer }
+        total_pages: { type: integer }
+    Product:
+      type: object
+      description: Public product fields; see product detail endpoint for additional fields.
+      properties:
+        id: { type: string }
+        name: { type: string }
+        description: { type: string }
+        display_price: { type: number }
+        rating_average: { type: number }
+        rating_count: { type: integer }
+        variants: { type: array, items: { type: object } }
+        images: { type: array, items: { type: object } }
+    OrderSummary:
+      type: object
+      properties:
+        id: { type: string }
+        number: { type: string }
+        ordered_at: { type: string, nullable: true }
+        status: { type: string, enum: [pending, confirmed, packing, shipping, delivered, cancelled] }
+        item_count: { type: integer }
+        grand_total: { type: number }
+        payment: { type: object }
+    OrderDetail:
+      type: object
+      properties:
+        id: { type: string }
+        number: { type: string }
+        status: { type: string, enum: [pending, confirmed, packing, shipping, delivered, cancelled] }
+        shipping:
+          type: object
+          properties:
+            method_name: { type: string }
+            tracking_code: { type: string, nullable: true, description: Legacy response alias; canonical value is in delivery_tracking }
+            estimated_delivery_date: { type: string, format: date, nullable: true, description: Legacy response alias; canonical value is in delivery_tracking }
+        delivery_tracking: { type: object, allOf: [{ $ref: '#/components/schemas/DeliveryTracking' }], nullable: true }
+        status_history: { type: array, items: { type: object } }
+    DeliveryTracking:
+      type: object
+      required: [tracking_code, status, estimated_delivery_date, delivered_at, history]
+      properties:
+        tracking_code: { type: string, example: DEL-20261007-12AB34CD56EF }
+        status: { type: string, enum: [created, picked_up, in_transit, out_for_delivery, delivered, failed_delivery] }
+        estimated_delivery_date: { type: string, format: date }
+        delivered_at: { type: string, format: date-time, nullable: true }
+        history:
+          type: array
+          items:
+            type: object
+            required: [status, at, note]
+            properties:
+              status: { type: string, enum: [created, picked_up, in_transit, out_for_delivery, delivered, failed_delivery] }
+              at: { type: string, format: date-time }
+              note: { type: string, maxLength: 500 }
+    CheckoutOptions:
+      type: object
+      properties:
+        shipping_code: { type: string, default: BD }
+        voucher_code: { type: string }

@@ -1,0 +1,44 @@
+{
+  "name": "webthoitrang/php-couchdb",
+  "description": "PHP and CouchDB modular rewrite foundation for WEBTHOITRANG",
+  "type": "project",
+  "require": {
+    "php": "^8.3",
+    "ext-curl": "*",
+    "ext-json": "*",
+    "ext-mbstring": "*",
+    "firebase/php-jwt": "^7.2.1"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  },
+  "scripts": {
+    "seed:import": "php scripts/import_seed.php",
+    "seed:verify": "php scripts/import_seed.php --verify-only",
+    "seed:verify-isolated": "php scripts/verify_seed_isolated.php",
+    "catalog:indexes": "php scripts/create_catalog_indexes.php",
+    "couchdb:diagnostics": "php scripts/couchdb_query_diagnostics.php",
+    "couchdb:failure-smoke": "php scripts/smoke_couchdb_unavailable.php",
+    "checkout:recover": "php scripts/recover_checkout.php",
+    "checkout:compact-markers": "php scripts/compact_order_markers.php",
+    "checkout:smoke": "php scripts/smoke_checkout.php",
+    "checkout:http-smoke": "php scripts/http_smoke_checkout.php",
+    "catalog:admin-smoke": "php scripts/smoke_product_admin.php",
+    "db:backup": "php scripts/database_backup.php backup",
+    "db:restore": "php scripts/database_backup.php restore",
+    "db:validator:update": "php scripts/update_domain_validator.php",
+    "db:snapshot:import": "php scripts/import_sql_snapshot.php",
+    "account:provision-staff": "php scripts/provision_staff_password.php",
+    "account:provision-customer": "php scripts/provision_customer_password.php",
+    "auth:jwt-smoke": "php scripts/jwt_token_smoke.php",
+    "demo:seed": "php scripts/seed_phase06_demo.php",
+    "demo:reset": "php scripts/seed_phase06_demo.php --reset",
+    "demo:verify": "php scripts/verify_phase06_demo.php"
+  },
+  "config": {
+    "sort-packages": true,
+    "platform-check": true
+  }
+}

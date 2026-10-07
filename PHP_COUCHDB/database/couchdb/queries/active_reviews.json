@@ -1,0 +1,14 @@
+{
+  "name": "active_reviews",
+  "description": "Đánh giá đang hiển thị công khai, dùng partial Mango index active_reviews.",
+  "expected_index": "active_reviews",
+  "request": {
+    "selector": {
+      "type": "review",
+      "active": true
+    },
+    "use_index": ["_design/catalog_indexes", "active_reviews"],
+    "fields": ["_id", "legacy_id", "product_id", "rating", "active"],
+    "limit": 10
+  }
+}

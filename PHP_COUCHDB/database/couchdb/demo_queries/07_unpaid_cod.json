@@ -1,0 +1,13 @@
+{
+  "selector": {
+    "type": {"$eq": "order"},
+    "status": {"$eq": "pending"},
+    "payment.method": {"$eq": "cod"},
+    "payment.paid": {"$eq": false}
+  },
+  "use_index": ["_design/catalog_indexes", "admin_orders"],
+  "sort": [{"ordered_at": "desc"}],
+  "fields": ["_id", "status", "ordered_at", "payment", "totals"],
+  "limit": 20,
+  "execution_stats": true
+}

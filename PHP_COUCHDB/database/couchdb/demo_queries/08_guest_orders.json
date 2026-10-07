@@ -1,0 +1,9 @@
+{
+  "selector": {
+    "type": {"$eq": "order"},
+    "guest_order": {"$eq": true}
+  },
+  "fields": ["_id", "status", "ordered_at", "guest_order", "delivery_tracking", "totals"],
+  "limit": 20,
+  "execution_stats": true
+}

@@ -1,0 +1,78 @@
+{
+  "_id": "_design/catalog_indexes",
+  "language": "query",
+  "views": {
+    "active_products": {
+      "map": {
+        "fields": {"type": "asc", "active": "asc"},
+        "partial_filter_selector": {"$and": [{"type": {"$eq": "product"}}, {"active": {"$eq": true}}]}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type", "active"], "partial_filter_selector": {"type": "product", "active": true}}}
+    },
+    "active_reviews": {
+      "map": {
+        "fields": {"type": "asc", "active": "asc"},
+        "partial_filter_selector": {"$and": [{"type": {"$eq": "review"}}, {"active": {"$eq": true}}]}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type", "active"], "partial_filter_selector": {"type": "review", "active": true}}}
+    },
+    "account_usernames": {
+      "map": {
+        "fields": {"type": "asc", "auth.username": "asc"},
+        "partial_filter_selector": {"type": {"$in": ["customer", "staff"]}}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type", "auth.username"], "partial_filter_selector": {"type": {"$in": ["customer", "staff"]}}}}
+    },
+    "customer_orders": {
+      "map": {
+        "fields": {"type": "asc", "customer.customer_id": "asc", "ordered_at": "asc"},
+        "partial_filter_selector": {"type": {"$eq": "order"}}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type", "customer.customer_id", "ordered_at"], "partial_filter_selector": {"type": "order"}}}
+    },
+    "admin_orders": {
+      "map": {
+        "fields": {"type": "asc", "status": "asc", "ordered_at": "asc"},
+        "partial_filter_selector": {"type": {"$eq": "order"}}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type", "status", "ordered_at"], "partial_filter_selector": {"type": "order"}}}
+    },
+    "admin_orders_by_date": {
+      "map": {
+        "fields": {"type": "asc", "ordered_at": "asc"},
+        "partial_filter_selector": {"type": {"$eq": "order"}}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type", "ordered_at"], "partial_filter_selector": {"type": "order"}}}
+    },
+    "delivery_tracking_code": {
+      "map": {
+        "fields": {"type": "asc", "delivery_tracking.tracking_code": "asc"},
+        "partial_filter_selector": {"type": {"$eq": "order"}}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type", "delivery_tracking.tracking_code"], "partial_filter_selector": {"type": "order"}}}
+    },
+    "admin_products": {
+      "map": {
+        "fields": {"type": "asc"},
+        "partial_filter_selector": {"type": {"$eq": "product"}}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type"], "partial_filter_selector": {"type": "product"}}}
+    },
+    "admin_reviews": {
+      "map": {
+        "fields": {"type": "asc"},
+        "partial_filter_selector": {"type": {"$eq": "review"}}
+      },
+      "reduce": "_count",
+      "options": {"def": {"fields": ["type"], "partial_filter_selector": {"type": "review"}}}
+    }
+  }
+}

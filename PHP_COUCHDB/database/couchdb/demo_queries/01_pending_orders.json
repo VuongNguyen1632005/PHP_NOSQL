@@ -1,0 +1,11 @@
+{
+  "selector": {
+    "type": {"$eq": "order"},
+    "status": {"$eq": "pending"}
+  },
+  "use_index": ["_design/catalog_indexes", "admin_orders"],
+  "sort": [{"ordered_at": "desc"}],
+  "fields": ["_id", "legacy_id", "status", "ordered_at", "totals", "payment"],
+  "limit": 10,
+  "execution_stats": true
+}

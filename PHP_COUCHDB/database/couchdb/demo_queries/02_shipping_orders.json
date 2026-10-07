@@ -1,0 +1,11 @@
+{
+  "selector": {
+    "type": {"$eq": "order"},
+    "status": {"$eq": "shipping"}
+  },
+  "use_index": ["_design/catalog_indexes", "admin_orders"],
+  "sort": [{"ordered_at": "desc"}],
+  "fields": ["_id", "status", "ordered_at", "items", "shipping", "payment", "delivery_tracking", "totals"],
+  "limit": 20,
+  "execution_stats": true
+}

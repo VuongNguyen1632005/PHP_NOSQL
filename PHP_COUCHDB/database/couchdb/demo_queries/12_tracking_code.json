@@ -1,0 +1,10 @@
+{
+  "selector": {
+    "type": {"$eq": "order"},
+    "delivery_tracking.tracking_code": {"$eq": "P06-TRK-0020"}
+  },
+  "use_index": ["_design/catalog_indexes", "delivery_tracking_code"],
+  "fields": ["_id", "status", "ordered_at", "items", "payment", "delivery_tracking"],
+  "limit": 5,
+  "execution_stats": true
+}

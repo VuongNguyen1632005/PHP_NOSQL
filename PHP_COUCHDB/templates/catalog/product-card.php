@@ -1,0 +1,4 @@
+<article class="product-card">
+    <a class="product-image" href="/products/<?= rawurlencode((string) $item['legacy_id']) ?>"><img loading="lazy" src="/<?= h(productImage($item)) ?>" alt="<?= h($item['name'] ?? '') ?>"><span class="image-arrow"><i class="fa-solid fa-arrow-up-right-from-square"></i></span></a>
+    <div class="product-info"><div class="rating-line"><span class="stars"><i class="fa-solid fa-star"></i> <?= number_format((float) ($item['rating_average'] ?? 0), 1, ',', '.') ?></span><span>(<?= (int) ($item['rating_count'] ?? 0) ?>)</span></div><a class="product-name" href="/products/<?= rawurlencode((string) $item['legacy_id']) ?>"><?= h($item['name'] ?? '') ?></a><div class="product-bottom"><strong><?= money($item['display_price'] ?? 0) ?></strong><span><?= h($item['category']['name'] ?? '') ?></span></div></div>
+</article>

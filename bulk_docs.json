@@ -1,0 +1,3720 @@
+{
+  "docs": [
+    {
+      "_id": "customer:KH001",
+      "type": "customer",
+      "schema_version": 1,
+      "legacy_id": "KH001",
+      "auth": {
+        "username": "demo1@gmail.com",
+        "password_hash": null,
+        "requires_password_reset": true,
+        "note": "Legacy plaintext password intentionally not migrated."
+      },
+      "profile": {
+        "name": "Nguyễn Văn A",
+        "phone": "0901234567",
+        "email": "demo1@gmail.com",
+        "addresses": []
+      },
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "KHACH_HANG"
+        ]
+      }
+    },
+    {
+      "_id": "customer:KH002",
+      "type": "customer",
+      "schema_version": 1,
+      "legacy_id": "KH002",
+      "auth": {
+        "username": "demo2@gmail.com",
+        "password_hash": null,
+        "requires_password_reset": true,
+        "note": "Legacy plaintext password intentionally not migrated."
+      },
+      "profile": {
+        "name": "Trần Thị B",
+        "phone": "0909888777",
+        "email": "demo2@gmail.com",
+        "addresses": []
+      },
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "KHACH_HANG"
+        ]
+      }
+    },
+    {
+      "_id": "customer:KH003",
+      "type": "customer",
+      "schema_version": 1,
+      "legacy_id": "KH003",
+      "auth": {
+        "username": "demo3@gmail.com",
+        "password_hash": null,
+        "requires_password_reset": true,
+        "note": "Legacy plaintext password intentionally not migrated."
+      },
+      "profile": {
+        "name": "Lê Văn C",
+        "phone": "0912345678",
+        "email": "demo3@gmail.com",
+        "addresses": []
+      },
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "KHACH_HANG"
+        ]
+      }
+    },
+    {
+      "_id": "staff:NV001",
+      "type": "staff",
+      "schema_version": 1,
+      "legacy_id": "NV001",
+      "auth": {
+        "username": "admin",
+        "password_hash": null,
+        "requires_password_reset": true,
+        "note": "Legacy plaintext password intentionally not migrated."
+      },
+      "profile": {
+        "name": "Quản Lý Cửa Hàng"
+      },
+      "role": "manager",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "NHAN_VIEN"
+        ]
+      }
+    },
+    {
+      "_id": "staff:NV002",
+      "type": "staff",
+      "schema_version": 1,
+      "legacy_id": "NV002",
+      "auth": {
+        "username": "staff",
+        "password_hash": null,
+        "requires_password_reset": true,
+        "note": "Legacy plaintext password intentionally not migrated."
+      },
+      "profile": {
+        "name": "Nhân Viên Bán Hàng"
+      },
+      "role": "staff",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "NHAN_VIEN"
+        ]
+      }
+    },
+    {
+      "_id": "product:A01",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "A01",
+      "name": "Áo NY Thêu Ngực",
+      "description": null,
+      "category": {
+        "code": "A",
+        "name": "Áo"
+      },
+      "variants": [
+        {
+          "variant_id": "CTA01SzS",
+          "size": "S",
+          "price": 150000,
+          "stock": 50,
+          "active": true
+        },
+        {
+          "variant_id": "CTA01SzM",
+          "size": "M",
+          "price": 150000,
+          "stock": 25,
+          "active": true
+        },
+        {
+          "variant_id": "CTA01SzL",
+          "size": "L",
+          "price": 150000,
+          "stock": 78,
+          "active": true
+        },
+        {
+          "variant_id": "CTA01SzXL",
+          "size": "XL",
+          "price": 150000,
+          "stock": 42,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-1-1/product-1-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-1/product-1-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-1/product-1-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-1/product-1-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:A02",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "A02",
+      "name": "Áo LA Navy Thêu Ngực",
+      "description": null,
+      "category": {
+        "code": "A",
+        "name": "Áo"
+      },
+      "variants": [
+        {
+          "variant_id": "CTA02SzS",
+          "size": "S",
+          "price": 250000,
+          "stock": 15,
+          "active": true
+        },
+        {
+          "variant_id": "CTA02SzM",
+          "size": "M",
+          "price": 250000,
+          "stock": 66,
+          "active": true
+        },
+        {
+          "variant_id": "CTA02SzL",
+          "size": "L",
+          "price": 250000,
+          "stock": 89,
+          "active": true
+        },
+        {
+          "variant_id": "CTA02SzXL",
+          "size": "XL",
+          "price": 250000,
+          "stock": 33,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-1-2/product-1-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-2/product-1-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-2/product-1-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-2/product-1-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:A05",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "A05",
+      "name": "Áo MLB B01 Đen",
+      "description": null,
+      "category": {
+        "code": "A",
+        "name": "Áo"
+      },
+      "variants": [
+        {
+          "variant_id": "CTA05SzS",
+          "size": "S",
+          "price": 450000,
+          "stock": 72,
+          "active": true
+        },
+        {
+          "variant_id": "CTA05SzM",
+          "size": "M",
+          "price": 450000,
+          "stock": 19,
+          "active": true
+        },
+        {
+          "variant_id": "CTA05SzL",
+          "size": "L",
+          "price": 450000,
+          "stock": 54,
+          "active": true
+        },
+        {
+          "variant_id": "CTA05SzXL",
+          "size": "XL",
+          "price": 450000,
+          "stock": 83,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-1-5/product-1-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-5/product-1-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-5/product-1-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-5/product-1-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:A06",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "A06",
+      "name": "Áo MLB NY Trắng Thêu Trơn",
+      "description": null,
+      "category": {
+        "code": "A",
+        "name": "Áo"
+      },
+      "variants": [
+        {
+          "variant_id": "CTA06SzS",
+          "size": "S",
+          "price": 380000,
+          "stock": 45,
+          "active": true
+        },
+        {
+          "variant_id": "CTA06SzM",
+          "size": "M",
+          "price": 380000,
+          "stock": 99,
+          "active": true
+        },
+        {
+          "variant_id": "CTA06SzL",
+          "size": "L",
+          "price": 380000,
+          "stock": 21,
+          "active": true
+        },
+        {
+          "variant_id": "CTA06SzXL",
+          "size": "XL",
+          "price": 380000,
+          "stock": 67,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-1-6/product-1-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-6/product-1-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-6/product-1-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-6/product-1-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:A10",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "A10",
+      "name": "Áo MLB LA Trắng Logo Xanh",
+      "description": null,
+      "category": {
+        "code": "A",
+        "name": "Áo"
+      },
+      "variants": [
+        {
+          "variant_id": "CTA10SzS",
+          "size": "S",
+          "price": 400000,
+          "stock": 70,
+          "active": true
+        },
+        {
+          "variant_id": "CTA10SzM",
+          "size": "M",
+          "price": 400000,
+          "stock": 48,
+          "active": true
+        },
+        {
+          "variant_id": "CTA10SzL",
+          "size": "L",
+          "price": 400000,
+          "stock": 22,
+          "active": true
+        },
+        {
+          "variant_id": "CTA10SzXL",
+          "size": "XL",
+          "price": 400000,
+          "stock": 59,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-1-10/product-1-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-10/product-1-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-10/product-1-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-10/product-1-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:A16",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "A16",
+      "name": "Áo COLDSTONE REDEEMER",
+      "description": null,
+      "category": {
+        "code": "A",
+        "name": "Áo"
+      },
+      "variants": [
+        {
+          "variant_id": "CTA16SzS",
+          "size": "S",
+          "price": 460000,
+          "stock": 30,
+          "active": true
+        },
+        {
+          "variant_id": "CTA16SzM",
+          "size": "M",
+          "price": 460000,
+          "stock": 58,
+          "active": true
+        },
+        {
+          "variant_id": "CTA16SzL",
+          "size": "L",
+          "price": 460000,
+          "stock": 94,
+          "active": true
+        },
+        {
+          "variant_id": "CTA16SzXL",
+          "size": "XL",
+          "price": 460000,
+          "stock": 13,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-1-16/product-1-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-16/product-1-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-16/product-1-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-1-16/product-1-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:Q01",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "Q01",
+      "name": "Quần Cargo",
+      "description": null,
+      "category": {
+        "code": "Q",
+        "name": "Quần"
+      },
+      "variants": [
+        {
+          "variant_id": "CTQ01SzS",
+          "size": "S",
+          "price": 400000,
+          "stock": 65,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ01SzM",
+          "size": "M",
+          "price": 400000,
+          "stock": 23,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ01SzL",
+          "size": "L",
+          "price": 400000,
+          "stock": 84,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ01SzXL",
+          "size": "XL",
+          "price": 400000,
+          "stock": 49,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-2-1/product-2-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-1/product-2-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-1/product-2-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-1/product-2-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:Q02",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "Q02",
+      "name": "Quần Dài Túi Hộp Đen",
+      "description": null,
+      "category": {
+        "code": "Q",
+        "name": "Quần"
+      },
+      "variants": [
+        {
+          "variant_id": "CTQ02SzS",
+          "size": "S",
+          "price": 180000,
+          "stock": 73,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ02SzM",
+          "size": "M",
+          "price": 180000,
+          "stock": 36,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ02SzL",
+          "size": "L",
+          "price": 180000,
+          "stock": 17,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ02SzXL",
+          "size": "XL",
+          "price": 180000,
+          "stock": 98,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-2-2/product-2-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-2/product-2-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-2/product-2-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-2/product-2-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:Q05",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "Q05",
+      "name": "Quần Slim Fit Chinos",
+      "description": null,
+      "category": {
+        "code": "Q",
+        "name": "Quần"
+      },
+      "variants": [
+        {
+          "variant_id": "CTQ05SzS",
+          "size": "S",
+          "price": 300000,
+          "stock": 68,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ05SzM",
+          "size": "M",
+          "price": 300000,
+          "stock": 32,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ05SzL",
+          "size": "L",
+          "price": 300000,
+          "stock": 87,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ05SzXL",
+          "size": "XL",
+          "price": 300000,
+          "stock": 24,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-2-5/product-2-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-5/product-2-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-5/product-2-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-5/product-2-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:Q08",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "Q08",
+      "name": "Quần MasCuline Beggi",
+      "description": null,
+      "category": {
+        "code": "Q",
+        "name": "Quần"
+      },
+      "variants": [
+        {
+          "variant_id": "CTQ08SzS",
+          "size": "S",
+          "price": 280000,
+          "stock": 14,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ08SzM",
+          "size": "M",
+          "price": 280000,
+          "stock": 59,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ08SzL",
+          "size": "L",
+          "price": 280000,
+          "stock": 92,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ08SzXL",
+          "size": "XL",
+          "price": 280000,
+          "stock": 37,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-2-8/product-2-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-8/product-2-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-8/product-2-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-8/product-2-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:Q09",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "Q09",
+      "name": "Quần Kaki Chino",
+      "description": null,
+      "category": {
+        "code": "Q",
+        "name": "Quần"
+      },
+      "variants": [
+        {
+          "variant_id": "CTQ09SzS",
+          "size": "S",
+          "price": 360000,
+          "stock": 76,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ09SzM",
+          "size": "M",
+          "price": 360000,
+          "stock": 25,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ09SzL",
+          "size": "L",
+          "price": 360000,
+          "stock": 53,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ09SzXL",
+          "size": "XL",
+          "price": 360000,
+          "stock": 89,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-2-9/product-2-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-9/product-2-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-9/product-2-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-9/product-2-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:Q15",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "Q15",
+      "name": "Quần Slim Fit Twill",
+      "description": null,
+      "category": {
+        "code": "Q",
+        "name": "Quần"
+      },
+      "variants": [
+        {
+          "variant_id": "CTQ15SzS",
+          "size": "S",
+          "price": 200000,
+          "stock": 57,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ15SzM",
+          "size": "M",
+          "price": 200000,
+          "stock": 40,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ15SzL",
+          "size": "L",
+          "price": 200000,
+          "stock": 88,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ15SzXL",
+          "size": "XL",
+          "price": 200000,
+          "stock": 26,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-2-15/product-2-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-15/product-2-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-15/product-2-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-15/product-2-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:Q16",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "Q16",
+      "name": "Quần Kaki Levi Crago Stay Loose",
+      "description": null,
+      "category": {
+        "code": "Q",
+        "name": "Quần"
+      },
+      "variants": [
+        {
+          "variant_id": "CTQ16SzS",
+          "size": "S",
+          "price": 290000,
+          "stock": 69,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ16SzM",
+          "size": "M",
+          "price": 290000,
+          "stock": 18,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ16SzL",
+          "size": "L",
+          "price": 290000,
+          "stock": 54,
+          "active": true
+        },
+        {
+          "variant_id": "CTQ16SzXL",
+          "size": "XL",
+          "price": 290000,
+          "stock": 91,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-2-16/product-2-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-16/product-2-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-16/product-2-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-2-16/product-2-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G01",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G01",
+      "name": "Giày Superstar",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG01Sz38",
+          "size": "38",
+          "price": 750000,
+          "stock": 20,
+          "active": true
+        },
+        {
+          "variant_id": "CTG01Sz39",
+          "size": "39",
+          "price": 750000,
+          "stock": 35,
+          "active": true
+        },
+        {
+          "variant_id": "CTG01Sz40",
+          "size": "40",
+          "price": 750000,
+          "stock": 50,
+          "active": true
+        },
+        {
+          "variant_id": "CTG01Sz41",
+          "size": "41",
+          "price": 750000,
+          "stock": 60,
+          "active": true
+        },
+        {
+          "variant_id": "CTG01Sz42",
+          "size": "42",
+          "price": 750000,
+          "stock": 55,
+          "active": true
+        },
+        {
+          "variant_id": "CTG01Sz43",
+          "size": "43",
+          "price": 750000,
+          "stock": 40,
+          "active": true
+        },
+        {
+          "variant_id": "CTG01Sz44",
+          "size": "44",
+          "price": 750000,
+          "stock": 25,
+          "active": true
+        },
+        {
+          "variant_id": "CTG01Sz45",
+          "size": "45",
+          "price": 750000,
+          "stock": 15,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-1/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-1/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-1/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-1/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G02",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G02",
+      "name": "Giày Court Refit",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG02Sz38",
+          "size": "38",
+          "price": 1200000,
+          "stock": 18,
+          "active": true
+        },
+        {
+          "variant_id": "CTG02Sz39",
+          "size": "39",
+          "price": 1200000,
+          "stock": 30,
+          "active": true
+        },
+        {
+          "variant_id": "CTG02Sz40",
+          "size": "40",
+          "price": 1200000,
+          "stock": 45,
+          "active": true
+        },
+        {
+          "variant_id": "CTG02Sz41",
+          "size": "41",
+          "price": 1200000,
+          "stock": 55,
+          "active": true
+        },
+        {
+          "variant_id": "CTG02Sz42",
+          "size": "42",
+          "price": 1200000,
+          "stock": 65,
+          "active": true
+        },
+        {
+          "variant_id": "CTG02Sz43",
+          "size": "43",
+          "price": 1200000,
+          "stock": 48,
+          "active": true
+        },
+        {
+          "variant_id": "CTG02Sz44",
+          "size": "44",
+          "price": 1200000,
+          "stock": 32,
+          "active": true
+        },
+        {
+          "variant_id": "CTG02Sz45",
+          "size": "45",
+          "price": 1200000,
+          "stock": 12,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-2/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-2/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-2/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-2/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G03",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G03",
+      "name": "Giày Samba OG",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG03Sz38",
+          "size": "38",
+          "price": 850000,
+          "stock": 25,
+          "active": true
+        },
+        {
+          "variant_id": "CTG03Sz39",
+          "size": "39",
+          "price": 850000,
+          "stock": 40,
+          "active": true
+        },
+        {
+          "variant_id": "CTG03Sz40",
+          "size": "40",
+          "price": 850000,
+          "stock": 60,
+          "active": true
+        },
+        {
+          "variant_id": "CTG03Sz41",
+          "size": "41",
+          "price": 850000,
+          "stock": 75,
+          "active": true
+        },
+        {
+          "variant_id": "CTG03Sz42",
+          "size": "42",
+          "price": 850000,
+          "stock": 50,
+          "active": true
+        },
+        {
+          "variant_id": "CTG03Sz43",
+          "size": "43",
+          "price": 850000,
+          "stock": 35,
+          "active": true
+        },
+        {
+          "variant_id": "CTG03Sz44",
+          "size": "44",
+          "price": 850000,
+          "stock": 20,
+          "active": true
+        },
+        {
+          "variant_id": "CTG03Sz45",
+          "size": "45",
+          "price": 850000,
+          "stock": 10,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-3/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-3/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-3/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-3/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G04",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G04",
+      "name": "Giày Barreda",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG04Sz38",
+          "size": "38",
+          "price": 1100000,
+          "stock": 22,
+          "active": true
+        },
+        {
+          "variant_id": "CTG04Sz39",
+          "size": "39",
+          "price": 1100000,
+          "stock": 38,
+          "active": true
+        },
+        {
+          "variant_id": "CTG04Sz40",
+          "size": "40",
+          "price": 1100000,
+          "stock": 55,
+          "active": true
+        },
+        {
+          "variant_id": "CTG04Sz41",
+          "size": "41",
+          "price": 1100000,
+          "stock": 62,
+          "active": true
+        },
+        {
+          "variant_id": "CTG04Sz42",
+          "size": "42",
+          "price": 1100000,
+          "stock": 45,
+          "active": true
+        },
+        {
+          "variant_id": "CTG04Sz43",
+          "size": "43",
+          "price": 1100000,
+          "stock": 30,
+          "active": true
+        },
+        {
+          "variant_id": "CTG04Sz44",
+          "size": "44",
+          "price": 1100000,
+          "stock": 18,
+          "active": true
+        },
+        {
+          "variant_id": "CTG04Sz45",
+          "size": "45",
+          "price": 1100000,
+          "stock": 14,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-4/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-4/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-4/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-4/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G05",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G05",
+      "name": "Giày Nike Air Force 1 '07",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG05Sz38",
+          "size": "38",
+          "price": 350000,
+          "stock": 40,
+          "active": true
+        },
+        {
+          "variant_id": "CTG05Sz39",
+          "size": "39",
+          "price": 350000,
+          "stock": 55,
+          "active": true
+        },
+        {
+          "variant_id": "CTG05Sz40",
+          "size": "40",
+          "price": 350000,
+          "stock": 70,
+          "active": true
+        },
+        {
+          "variant_id": "CTG05Sz41",
+          "size": "41",
+          "price": 350000,
+          "stock": 85,
+          "active": true
+        },
+        {
+          "variant_id": "CTG05Sz42",
+          "size": "42",
+          "price": 350000,
+          "stock": 60,
+          "active": true
+        },
+        {
+          "variant_id": "CTG05Sz43",
+          "size": "43",
+          "price": 350000,
+          "stock": 50,
+          "active": true
+        },
+        {
+          "variant_id": "CTG05Sz44",
+          "size": "44",
+          "price": 350000,
+          "stock": 35,
+          "active": true
+        },
+        {
+          "variant_id": "CTG05Sz45",
+          "size": "45",
+          "price": 350000,
+          "stock": 20,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-5/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-5/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-5/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-5/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G07",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G07",
+      "name": "Giày Jordan Stadium 90",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG07Sz38",
+          "size": "38",
+          "price": 1300000,
+          "stock": 15,
+          "active": true
+        },
+        {
+          "variant_id": "CTG07Sz39",
+          "size": "39",
+          "price": 1300000,
+          "stock": 28,
+          "active": true
+        },
+        {
+          "variant_id": "CTG07Sz40",
+          "size": "40",
+          "price": 1300000,
+          "stock": 40,
+          "active": true
+        },
+        {
+          "variant_id": "CTG07Sz41",
+          "size": "41",
+          "price": 1300000,
+          "stock": 52,
+          "active": true
+        },
+        {
+          "variant_id": "CTG07Sz42",
+          "size": "42",
+          "price": 1300000,
+          "stock": 48,
+          "active": true
+        },
+        {
+          "variant_id": "CTG07Sz43",
+          "size": "43",
+          "price": 1300000,
+          "stock": 36,
+          "active": true
+        },
+        {
+          "variant_id": "CTG07Sz44",
+          "size": "44",
+          "price": 1300000,
+          "stock": 20,
+          "active": true
+        },
+        {
+          "variant_id": "CTG07Sz45",
+          "size": "45",
+          "price": 1300000,
+          "stock": 10,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-7/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-7/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-7/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-7/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G08",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G08",
+      "name": "Giày Air Jordan 1 Low",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG08Sz38",
+          "size": "38",
+          "price": 900000,
+          "stock": 35,
+          "active": true
+        },
+        {
+          "variant_id": "CTG08Sz39",
+          "size": "39",
+          "price": 900000,
+          "stock": 50,
+          "active": true
+        },
+        {
+          "variant_id": "CTG08Sz40",
+          "size": "40",
+          "price": 900000,
+          "stock": 65,
+          "active": true
+        },
+        {
+          "variant_id": "CTG08Sz41",
+          "size": "41",
+          "price": 900000,
+          "stock": 80,
+          "active": true
+        },
+        {
+          "variant_id": "CTG08Sz42",
+          "size": "42",
+          "price": 900000,
+          "stock": 70,
+          "active": true
+        },
+        {
+          "variant_id": "CTG08Sz43",
+          "size": "43",
+          "price": 900000,
+          "stock": 55,
+          "active": true
+        },
+        {
+          "variant_id": "CTG08Sz44",
+          "size": "44",
+          "price": 900000,
+          "stock": 40,
+          "active": true
+        },
+        {
+          "variant_id": "CTG08Sz45",
+          "size": "45",
+          "price": 900000,
+          "stock": 25,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-8/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-8/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-8/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-8/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G10",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G10",
+      "name": "Giày SIGOURNEY SIG-33",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG10Sz38",
+          "size": "38",
+          "price": 400000,
+          "stock": 45,
+          "active": true
+        },
+        {
+          "variant_id": "CTG10Sz39",
+          "size": "39",
+          "price": 400000,
+          "stock": 60,
+          "active": true
+        },
+        {
+          "variant_id": "CTG10Sz40",
+          "size": "40",
+          "price": 400000,
+          "stock": 80,
+          "active": true
+        },
+        {
+          "variant_id": "CTG10Sz41",
+          "size": "41",
+          "price": 400000,
+          "stock": 90,
+          "active": true
+        },
+        {
+          "variant_id": "CTG10Sz42",
+          "size": "42",
+          "price": 400000,
+          "stock": 75,
+          "active": true
+        },
+        {
+          "variant_id": "CTG10Sz43",
+          "size": "43",
+          "price": 400000,
+          "stock": 65,
+          "active": true
+        },
+        {
+          "variant_id": "CTG10Sz44",
+          "size": "44",
+          "price": 400000,
+          "stock": 40,
+          "active": true
+        },
+        {
+          "variant_id": "CTG10Sz45",
+          "size": "45",
+          "price": 400000,
+          "stock": 25,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-10/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-10/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-10/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-10/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G12",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G12",
+      "name": "Giày Cao Gót Nữ EHE006Z0",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG12Sz38",
+          "size": "38",
+          "price": 1250000,
+          "stock": 16,
+          "active": true
+        },
+        {
+          "variant_id": "CTG12Sz39",
+          "size": "39",
+          "price": 1250000,
+          "stock": 25,
+          "active": true
+        },
+        {
+          "variant_id": "CTG12Sz40",
+          "size": "40",
+          "price": 1250000,
+          "stock": 38,
+          "active": true
+        },
+        {
+          "variant_id": "CTG12Sz41",
+          "size": "41",
+          "price": 1250000,
+          "stock": 50,
+          "active": true
+        },
+        {
+          "variant_id": "CTG12Sz42",
+          "size": "42",
+          "price": 1250000,
+          "stock": 45,
+          "active": true
+        },
+        {
+          "variant_id": "CTG12Sz43",
+          "size": "43",
+          "price": 1250000,
+          "stock": 35,
+          "active": true
+        },
+        {
+          "variant_id": "CTG12Sz44",
+          "size": "44",
+          "price": 1250000,
+          "stock": 22,
+          "active": true
+        },
+        {
+          "variant_id": "CTG12Sz45",
+          "size": "45",
+          "price": 1250000,
+          "stock": 12,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-12/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-12/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-12/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-12/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G14",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G14",
+      "name": "Giày Cao Gót Nữ EHE017Z0",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG14Sz38",
+          "size": "38",
+          "price": 1100000,
+          "stock": 24,
+          "active": true
+        },
+        {
+          "variant_id": "CTG14Sz39",
+          "size": "39",
+          "price": 1100000,
+          "stock": 36,
+          "active": true
+        },
+        {
+          "variant_id": "CTG14Sz40",
+          "size": "40",
+          "price": 1100000,
+          "stock": 52,
+          "active": true
+        },
+        {
+          "variant_id": "CTG14Sz41",
+          "size": "41",
+          "price": 1100000,
+          "stock": 66,
+          "active": true
+        },
+        {
+          "variant_id": "CTG14Sz42",
+          "size": "42",
+          "price": 1100000,
+          "stock": 58,
+          "active": true
+        },
+        {
+          "variant_id": "CTG14Sz43",
+          "size": "43",
+          "price": 1100000,
+          "stock": 44,
+          "active": true
+        },
+        {
+          "variant_id": "CTG14Sz44",
+          "size": "44",
+          "price": 1100000,
+          "stock": 26,
+          "active": true
+        },
+        {
+          "variant_id": "CTG14Sz45",
+          "size": "45",
+          "price": 1100000,
+          "stock": 14,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-14/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-14/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-14/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-14/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "product:G15",
+      "type": "product",
+      "schema_version": 1,
+      "legacy_id": "G15",
+      "name": "Giày Cao Gót Nữ EFL010Z0",
+      "description": null,
+      "category": {
+        "code": "G",
+        "name": "Giày"
+      },
+      "variants": [
+        {
+          "variant_id": "CTG15Sz38",
+          "size": "38",
+          "price": 370000,
+          "stock": 42,
+          "active": true
+        },
+        {
+          "variant_id": "CTG15Sz39",
+          "size": "39",
+          "price": 370000,
+          "stock": 58,
+          "active": true
+        },
+        {
+          "variant_id": "CTG15Sz40",
+          "size": "40",
+          "price": 370000,
+          "stock": 74,
+          "active": true
+        },
+        {
+          "variant_id": "CTG15Sz41",
+          "size": "41",
+          "price": 370000,
+          "stock": 88,
+          "active": true
+        },
+        {
+          "variant_id": "CTG15Sz42",
+          "size": "42",
+          "price": 370000,
+          "stock": 76,
+          "active": true
+        },
+        {
+          "variant_id": "CTG15Sz43",
+          "size": "43",
+          "price": 370000,
+          "stock": 62,
+          "active": true
+        },
+        {
+          "variant_id": "CTG15Sz44",
+          "size": "44",
+          "price": 370000,
+          "stock": 45,
+          "active": true
+        },
+        {
+          "variant_id": "CTG15Sz45",
+          "size": "45",
+          "price": 370000,
+          "stock": 30,
+          "active": true
+        }
+      ],
+      "images": [
+        {
+          "path": "assets/img/product-details/product-details-3-15/product-3-1.png",
+          "is_primary": true,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-15/product-3-2.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-15/product-3-3.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        },
+        {
+          "path": "assets/img/product-details/product-details-3-15/product-3-4.png",
+          "is_primary": false,
+          "active": true,
+          "source": "legacy_naming_pattern"
+        }
+      ],
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "SAN_PHAM",
+          "CHI_TIET_SP",
+          "KICH_THUOC",
+          "HINH_ANH_SP"
+        ],
+        "migration_scope": "core products referenced by carts/orders"
+      }
+    },
+    {
+      "_id": "voucher:SAVE10",
+      "type": "voucher",
+      "schema_version": 1,
+      "code": "SAVE10",
+      "value": 10,
+      "discount_type": "percent",
+      "remaining_quantity": 8,
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "MA_GIAM_GIA"
+        ]
+      }
+    },
+    {
+      "_id": "voucher:CASH5",
+      "type": "voucher",
+      "schema_version": 1,
+      "code": "CASH5",
+      "value": 5000,
+      "discount_type": "cash",
+      "remaining_quantity": 3,
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "MA_GIAM_GIA"
+        ]
+      }
+    },
+    {
+      "_id": "voucher:FREESHIP",
+      "type": "voucher",
+      "schema_version": 1,
+      "code": "FREESHIP",
+      "value": 0,
+      "discount_type": "shipping",
+      "remaining_quantity": 10,
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "MA_GIAM_GIA"
+        ]
+      }
+    },
+    {
+      "_id": "voucher:NEW25",
+      "type": "voucher",
+      "schema_version": 1,
+      "code": "NEW25",
+      "value": 25,
+      "discount_type": "percent",
+      "remaining_quantity": 5,
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "MA_GIAM_GIA"
+        ]
+      }
+    },
+    {
+      "_id": "voucher:CASH20",
+      "type": "voucher",
+      "schema_version": 1,
+      "code": "CASH20",
+      "value": 20000,
+      "discount_type": "cash",
+      "remaining_quantity": 2,
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "MA_GIAM_GIA"
+        ]
+      }
+    },
+    {
+      "_id": "shipping_method:HT",
+      "type": "shipping_method",
+      "schema_version": 1,
+      "code": "HT",
+      "name": "Hỏa tốc",
+      "fee": 30000,
+      "active": true,
+      "currency": "VND",
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "PHUONG_THUC_VAN_CHUYEN"
+        ]
+      }
+    },
+    {
+      "_id": "shipping_method:BD",
+      "type": "shipping_method",
+      "schema_version": 1,
+      "code": "BD",
+      "name": "Bưu điện",
+      "fee": 20000,
+      "active": true,
+      "currency": "VND",
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "PHUONG_THUC_VAN_CHUYEN"
+        ]
+      }
+    },
+    {
+      "_id": "cart:KH001",
+      "type": "cart",
+      "schema_version": 1,
+      "customer_id": "KH001",
+      "items": [
+        {
+          "product_id": "A01",
+          "variant_id": "CTA01SzM",
+          "size": "M",
+          "quantity": 2,
+          "unit_price_snapshot": 150000
+        },
+        {
+          "product_id": "Q05",
+          "variant_id": "CTQ05SzL",
+          "size": "L",
+          "quantity": 1,
+          "unit_price_snapshot": 300000
+        },
+        {
+          "product_id": "G02",
+          "variant_id": "CTG02Sz38",
+          "size": "38",
+          "quantity": 1,
+          "unit_price_snapshot": 1200000
+        },
+        {
+          "product_id": "A10",
+          "variant_id": "CTA10SzXL",
+          "size": "XL",
+          "quantity": 3,
+          "unit_price_snapshot": 400000
+        }
+      ],
+      "updated_at": null,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "GIO_HANG",
+          "CHI_TIET_SP"
+        ]
+      }
+    },
+    {
+      "_id": "cart:KH002",
+      "type": "cart",
+      "schema_version": 1,
+      "customer_id": "KH002",
+      "items": [
+        {
+          "product_id": "G10",
+          "variant_id": "CTG10Sz40",
+          "size": "40",
+          "quantity": 1,
+          "unit_price_snapshot": 400000
+        },
+        {
+          "product_id": "Q16",
+          "variant_id": "CTQ16SzXL",
+          "size": "XL",
+          "quantity": 2,
+          "unit_price_snapshot": 290000
+        },
+        {
+          "product_id": "A05",
+          "variant_id": "CTA05SzS",
+          "size": "S",
+          "quantity": 1,
+          "unit_price_snapshot": 450000
+        }
+      ],
+      "updated_at": null,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "GIO_HANG",
+          "CHI_TIET_SP"
+        ]
+      }
+    },
+    {
+      "_id": "cart:KH003",
+      "type": "cart",
+      "schema_version": 1,
+      "customer_id": "KH003",
+      "items": [
+        {
+          "product_id": "A16",
+          "variant_id": "CTA16SzL",
+          "size": "L",
+          "quantity": 3,
+          "unit_price_snapshot": 460000
+        },
+        {
+          "product_id": "Q01",
+          "variant_id": "CTQ01SzM",
+          "size": "M",
+          "quantity": 2,
+          "unit_price_snapshot": 400000
+        },
+        {
+          "product_id": "G15",
+          "variant_id": "CTG15Sz39",
+          "size": "39",
+          "quantity": 1,
+          "unit_price_snapshot": 370000
+        },
+        {
+          "product_id": "Q08",
+          "variant_id": "CTQ08SzXL",
+          "size": "XL",
+          "quantity": 1,
+          "unit_price_snapshot": 280000
+        },
+        {
+          "product_id": "A02",
+          "variant_id": "CTA02SzM",
+          "size": "M",
+          "quantity": 2,
+          "unit_price_snapshot": 250000
+        }
+      ],
+      "updated_at": null,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "GIO_HANG",
+          "CHI_TIET_SP"
+        ]
+      }
+    },
+    {
+      "_id": "order:KH001DH001",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH001DH001",
+      "customer": {
+        "customer_id": "KH001",
+        "name": "Nguyễn Văn A",
+        "email": "demo1@gmail.com",
+        "phone": "0901234567"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Nguyễn Văn A",
+        "phone": "0901234567",
+        "email": "demo1@gmail.com",
+        "address": "123 Nguyễn Huệ, Quận 1, TP.HCM"
+      },
+      "items": [
+        {
+          "product_id": "G01",
+          "product_name": "Giày Superstar",
+          "variant_id": "CTG01Sz38",
+          "size": "38",
+          "quantity": 1,
+          "unit_price": 750000,
+          "line_total": 750000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "HT",
+        "method_name": "Hỏa tốc",
+        "fee": 30000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-11-23"
+      },
+      "discount": {
+        "code": "SAVE10",
+        "type": "percent",
+        "value": 10,
+        "amount": 75000,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "cod",
+        "legacy_label": "Thanh toán khi nhận hàng",
+        "status": "paid",
+        "paid": true
+      },
+      "totals": {
+        "total_quantity": 1,
+        "subtotal": 750000,
+        "shipping_fee": 30000,
+        "discount_amount": 75000,
+        "grand_total": 705000,
+        "currency": "VND"
+      },
+      "status": "delivered",
+      "status_history": [
+        {
+          "status": "delivered",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": "Giao giờ hành chính",
+      "ordered_at": "2025-11-20T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:KH001DH002",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH001DH002",
+      "customer": {
+        "customer_id": "KH001",
+        "name": "Nguyễn Văn A",
+        "email": "demo1@gmail.com",
+        "phone": "0901234567"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Nguyễn Văn A",
+        "phone": "0901234567",
+        "email": "demo1@gmail.com",
+        "address": "123 Nguyễn Huệ, Quận 1, TP.HCM"
+      },
+      "items": [
+        {
+          "product_id": "G02",
+          "product_name": "Giày Court Refit",
+          "variant_id": "CTG02Sz40",
+          "size": "40",
+          "quantity": 1,
+          "unit_price": 1200000,
+          "line_total": 1200000,
+          "currency": "VND"
+        },
+        {
+          "product_id": "Q01",
+          "product_name": "Quần Cargo",
+          "variant_id": "CTQ01SzL",
+          "size": "L",
+          "quantity": 1,
+          "unit_price": 400000,
+          "line_total": 400000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "BD",
+        "method_name": "Bưu điện",
+        "fee": 20000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-12-11"
+      },
+      "discount": {
+        "code": "CASH20",
+        "type": "cash",
+        "value": 20000,
+        "amount": 20000,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "legacy_label": "Chuyển khoản",
+        "status": "paid",
+        "paid": true
+      },
+      "totals": {
+        "total_quantity": 2,
+        "subtotal": 1600000,
+        "shipping_fee": 20000,
+        "discount_amount": 20000,
+        "grand_total": 1600000,
+        "currency": "VND"
+      },
+      "status": "shipping",
+      "status_history": [
+        {
+          "status": "shipping",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": null,
+      "ordered_at": "2025-12-08T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:KH001DH003",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH001DH003",
+      "customer": {
+        "customer_id": "KH001",
+        "name": "Nguyễn Văn A",
+        "email": "demo1@gmail.com",
+        "phone": "0901234567"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Nguyễn Văn A",
+        "phone": "0901234567",
+        "email": "demo1@gmail.com",
+        "address": "45 Lê Lợi, Quận 1, TP.HCM"
+      },
+      "items": [
+        {
+          "product_id": "G04",
+          "product_name": "Giày Barreda",
+          "variant_id": "CTG04Sz42",
+          "size": "42",
+          "quantity": 1,
+          "unit_price": 1100000,
+          "line_total": 1100000,
+          "currency": "VND"
+        },
+        {
+          "product_id": "Q01",
+          "product_name": "Quần Cargo",
+          "variant_id": "CTQ01SzS",
+          "size": "S",
+          "quantity": 2,
+          "unit_price": 400000,
+          "line_total": 800000,
+          "currency": "VND"
+        },
+        {
+          "product_id": "Q15",
+          "product_name": "Quần Slim Fit Twill",
+          "variant_id": "CTQ15SzM",
+          "size": "M",
+          "quantity": 1,
+          "unit_price": 200000,
+          "line_total": 200000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "HT",
+        "method_name": "Hỏa tốc",
+        "fee": 30000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-12-14"
+      },
+      "discount": {
+        "code": null,
+        "type": null,
+        "value": 0,
+        "amount": 0,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "card",
+        "legacy_label": "Thẻ tín dụng/ghi nợ",
+        "status": "unpaid",
+        "paid": false
+      },
+      "totals": {
+        "total_quantity": 4,
+        "subtotal": 2100000,
+        "shipping_fee": 30000,
+        "discount_amount": 0,
+        "grand_total": 2130000,
+        "currency": "VND"
+      },
+      "status": "pending",
+      "status_history": [
+        {
+          "status": "pending",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": "Gọi trước khi giao 30p",
+      "ordered_at": "2025-12-11T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:KH002DH001",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH002DH001",
+      "customer": {
+        "customer_id": "KH002",
+        "name": "Trần Thị B",
+        "email": "demo2@gmail.com",
+        "phone": "0909888777"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Trần Thị B",
+        "phone": "0909888777",
+        "email": "demo2@gmail.com",
+        "address": "88 Trần Hưng Đạo, Quận 5, TP.HCM"
+      },
+      "items": [
+        {
+          "product_id": "G08",
+          "product_name": "Giày Air Jordan 1 Low",
+          "variant_id": "CTG08Sz44",
+          "size": "44",
+          "quantity": 1,
+          "unit_price": 900000,
+          "line_total": 900000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "BD",
+        "method_name": "Bưu điện",
+        "fee": 20000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-11-19"
+      },
+      "discount": {
+        "code": null,
+        "type": null,
+        "value": 0,
+        "amount": 0,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "cod",
+        "legacy_label": "Thanh toán khi nhận hàng",
+        "status": "unpaid",
+        "paid": false
+      },
+      "totals": {
+        "total_quantity": 1,
+        "subtotal": 900000,
+        "shipping_fee": 20000,
+        "discount_amount": 0,
+        "grand_total": 920000,
+        "currency": "VND"
+      },
+      "status": "cancelled",
+      "status_history": [
+        {
+          "status": "cancelled",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": "Giao buổi chiều",
+      "ordered_at": "2025-11-15T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:KH002DH002",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH002DH002",
+      "customer": {
+        "customer_id": "KH002",
+        "name": "Trần Thị B",
+        "email": "demo2@gmail.com",
+        "phone": "0909888777"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Trần Thị B",
+        "phone": "0909888777",
+        "email": "demo2@gmail.com",
+        "address": "Số 9 đường 3/2, Quận 10, TP.HCM"
+      },
+      "items": [
+        {
+          "product_id": "G07",
+          "product_name": "Giày Jordan Stadium 90",
+          "variant_id": "CTG07Sz38",
+          "size": "38",
+          "quantity": 1,
+          "unit_price": 1300000,
+          "line_total": 1300000,
+          "currency": "VND"
+        },
+        {
+          "product_id": "G14",
+          "product_name": "Giày Cao Gót Nữ EHE017Z0",
+          "variant_id": "CTG14Sz40",
+          "size": "40",
+          "quantity": 1,
+          "unit_price": 1100000,
+          "line_total": 1100000,
+          "currency": "VND"
+        },
+        {
+          "product_id": "Q05",
+          "product_name": "Quần Slim Fit Chinos",
+          "variant_id": "CTQ05SzL",
+          "size": "L",
+          "quantity": 2,
+          "unit_price": 300000,
+          "line_total": 600000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "HT",
+        "method_name": "Hỏa tốc",
+        "fee": 30000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-12-10"
+      },
+      "discount": {
+        "code": "NEW25",
+        "type": "percent",
+        "value": 25,
+        "amount": 750000,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "legacy_label": "Chuyển khoản",
+        "status": "paid",
+        "paid": true
+      },
+      "totals": {
+        "total_quantity": 4,
+        "subtotal": 3000000,
+        "shipping_fee": 30000,
+        "discount_amount": 750000,
+        "grand_total": 2280000,
+        "currency": "VND"
+      },
+      "status": "shipping",
+      "status_history": [
+        {
+          "status": "shipping",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": null,
+      "ordered_at": "2025-12-07T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:KH003DH001",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH003DH001",
+      "customer": {
+        "customer_id": "KH003",
+        "name": "Lê Văn C",
+        "email": "demo3@gmail.com",
+        "phone": "0912345678"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Lê Văn C",
+        "phone": "0912345678",
+        "email": "demo3@gmail.com",
+        "address": "Vinhome Central Park, Bình Thạnh"
+      },
+      "items": [
+        {
+          "product_id": "G01",
+          "product_name": "Giày Superstar",
+          "variant_id": "CTG01Sz40",
+          "size": "40",
+          "quantity": 2,
+          "unit_price": 750000,
+          "line_total": 1500000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "BD",
+        "method_name": "Bưu điện",
+        "fee": 20000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-11-03"
+      },
+      "discount": {
+        "code": "CASH5",
+        "type": "cash",
+        "value": 5000,
+        "amount": 5000,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "cod",
+        "legacy_label": "Thanh toán khi nhận hàng",
+        "status": "paid",
+        "paid": true
+      },
+      "totals": {
+        "total_quantity": 2,
+        "subtotal": 1500000,
+        "shipping_fee": 20000,
+        "discount_amount": 5000,
+        "grand_total": 1515000,
+        "currency": "VND"
+      },
+      "status": "delivered",
+      "status_history": [
+        {
+          "status": "delivered",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": null,
+      "ordered_at": "2025-10-30T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:KH003DH002",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH003DH002",
+      "customer": {
+        "customer_id": "KH003",
+        "name": "Lê Văn C",
+        "email": "demo3@gmail.com",
+        "phone": "0912345678"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Lê Văn C",
+        "phone": "0912345678",
+        "email": "demo3@gmail.com",
+        "address": "Vinhome Central Park, Bình Thạnh"
+      },
+      "items": [
+        {
+          "product_id": "G03",
+          "product_name": "Giày Samba OG",
+          "variant_id": "CTG03Sz42",
+          "size": "42",
+          "quantity": 1,
+          "unit_price": 850000,
+          "line_total": 850000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "HT",
+        "method_name": "Hỏa tốc",
+        "fee": 30000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-11-14"
+      },
+      "discount": {
+        "code": null,
+        "type": null,
+        "value": 0,
+        "amount": 0,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "card",
+        "legacy_label": "Thẻ tín dụng/ghi nợ",
+        "status": "paid",
+        "paid": true
+      },
+      "totals": {
+        "total_quantity": 1,
+        "subtotal": 850000,
+        "shipping_fee": 30000,
+        "discount_amount": 0,
+        "grand_total": 880000,
+        "currency": "VND"
+      },
+      "status": "delivered",
+      "status_history": [
+        {
+          "status": "delivered",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": "Gửi ở lễ tân tòa nhà",
+      "ordered_at": "2025-11-10T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:KH003DH003",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH003DH003",
+      "customer": {
+        "customer_id": "KH003",
+        "name": "Lê Văn C",
+        "email": "demo3@gmail.com",
+        "phone": "0912345678"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Lê Văn C",
+        "phone": "0912345678",
+        "email": "demo3@gmail.com",
+        "address": "Tòa nhà Bitexco, Quận 1, TP.HCM"
+      },
+      "items": [
+        {
+          "product_id": "G12",
+          "product_name": "Giày Cao Gót Nữ EHE006Z0",
+          "variant_id": "CTG12Sz45",
+          "size": "45",
+          "quantity": 2,
+          "unit_price": 1250000,
+          "line_total": 2500000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "BD",
+        "method_name": "Bưu điện",
+        "fee": 20000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-12-13"
+      },
+      "discount": {
+        "code": "NEW25",
+        "type": "percent",
+        "value": 25,
+        "amount": 250000,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "legacy_label": "Chuyển khoản",
+        "status": "paid",
+        "paid": true
+      },
+      "totals": {
+        "total_quantity": 2,
+        "subtotal": 2500000,
+        "shipping_fee": 20000,
+        "discount_amount": 250000,
+        "grand_total": 2270000,
+        "currency": "VND"
+      },
+      "status": "pending",
+      "status_history": [
+        {
+          "status": "pending",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": null,
+      "ordered_at": "2025-12-10T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:KH003DH004",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "KH003DH004",
+      "customer": {
+        "customer_id": "KH003",
+        "name": "Lê Văn C",
+        "email": "demo3@gmail.com",
+        "phone": "0912345678"
+      },
+      "guest_order": false,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Lê Văn C",
+        "phone": "0912345678",
+        "email": "demo3@gmail.com",
+        "address": "Vinhome Central Park, Bình Thạnh"
+      },
+      "items": [
+        {
+          "product_id": "A02",
+          "product_name": "Áo LA Navy Thêu Ngực",
+          "variant_id": "CTA02SzS",
+          "size": "S",
+          "quantity": 2,
+          "unit_price": 250000,
+          "line_total": 500000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "BD",
+        "method_name": "Bưu điện",
+        "fee": 20000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-12-05"
+      },
+      "discount": {
+        "code": null,
+        "type": null,
+        "value": 0,
+        "amount": 0,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "cod",
+        "legacy_label": "Thanh toán khi nhận hàng",
+        "status": "unpaid",
+        "paid": false
+      },
+      "totals": {
+        "total_quantity": 2,
+        "subtotal": 500000,
+        "shipping_fee": 20000,
+        "discount_amount": 0,
+        "grand_total": 520000,
+        "currency": "VND"
+      },
+      "status": "cancelled",
+      "status_history": [
+        {
+          "status": "cancelled",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": null,
+      "ordered_at": "2025-12-01T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:GUESTDH001",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "GUESTDH001",
+      "customer": null,
+      "guest_order": true,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Phạm Khách Lạ",
+        "phone": "0999111222",
+        "email": "guest1@email.com",
+        "address": "100 Pasteur, Quận 1, TP.HCM"
+      },
+      "items": [
+        {
+          "product_id": "A06",
+          "product_name": "Áo MLB NY Trắng Thêu Trơn",
+          "variant_id": "CTA06SzM",
+          "size": "M",
+          "quantity": 1,
+          "unit_price": 380000,
+          "line_total": 380000,
+          "currency": "VND"
+        },
+        {
+          "product_id": "Q09",
+          "product_name": "Quần Kaki Chino",
+          "variant_id": "CTQ09SzL",
+          "size": "L",
+          "quantity": 1,
+          "unit_price": 360000,
+          "line_total": 360000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "HT",
+        "method_name": "Hỏa tốc",
+        "fee": 30000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-12-21"
+      },
+      "discount": {
+        "code": null,
+        "type": null,
+        "value": 0,
+        "amount": 0,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "cod",
+        "legacy_label": "Thanh toán khi nhận hàng",
+        "status": "unpaid",
+        "paid": false
+      },
+      "totals": {
+        "total_quantity": 2,
+        "subtotal": 740000,
+        "shipping_fee": 30000,
+        "discount_amount": 0,
+        "grand_total": 770000,
+        "currency": "VND"
+      },
+      "status": "pending",
+      "status_history": [
+        {
+          "status": "pending",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": "Nhà trong hẻm nhỏ",
+      "ordered_at": "2025-12-20T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:GUESTDH002",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "GUESTDH002",
+      "customer": null,
+      "guest_order": true,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Hoàng Vãng Lai",
+        "phone": "0888555666",
+        "email": "guest2@email.com",
+        "address": "200 Võ Văn Kiệt, Quận 1, TP.HCM"
+      },
+      "items": [
+        {
+          "product_id": "G05",
+          "product_name": "Giày Nike Air Force 1 '07",
+          "variant_id": "CTG05Sz41",
+          "size": "41",
+          "quantity": 1,
+          "unit_price": 350000,
+          "line_total": 350000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "BD",
+        "method_name": "Bưu điện",
+        "fee": 20000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-12-25"
+      },
+      "discount": {
+        "code": "SAVE10",
+        "type": "percent",
+        "value": 10,
+        "amount": 35000,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "legacy_label": "Chuyển khoản",
+        "status": "paid",
+        "paid": true
+      },
+      "totals": {
+        "total_quantity": 1,
+        "subtotal": 350000,
+        "shipping_fee": 20000,
+        "discount_amount": 35000,
+        "grand_total": 335000,
+        "currency": "VND"
+      },
+      "status": "shipping",
+      "status_history": [
+        {
+          "status": "shipping",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": null,
+      "ordered_at": "2025-12-21T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:GUESTDH003",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "GUESTDH003",
+      "customer": null,
+      "guest_order": true,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Trần Văn Khách",
+        "phone": "0912345678",
+        "email": "guest3@email.com",
+        "address": "123 Đường Láng, Hà Nội"
+      },
+      "items": [
+        {
+          "product_id": "A01",
+          "product_name": "Áo NY Thêu Ngực",
+          "variant_id": "CTA01SzL",
+          "size": "L",
+          "quantity": 2,
+          "unit_price": 150000,
+          "line_total": 300000,
+          "currency": "VND"
+        },
+        {
+          "product_id": "Q02",
+          "product_name": "Quần Dài Túi Hộp Đen",
+          "variant_id": "CTQ02SzM",
+          "size": "M",
+          "quantity": 1,
+          "unit_price": 180000,
+          "line_total": 180000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "HT",
+        "method_name": "Hỏa tốc",
+        "fee": 30000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-11-04"
+      },
+      "discount": {
+        "code": null,
+        "type": null,
+        "value": 0,
+        "amount": 0,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "cod",
+        "legacy_label": "Thanh toán khi nhận hàng",
+        "status": "paid",
+        "paid": true
+      },
+      "totals": {
+        "total_quantity": 3,
+        "subtotal": 480000,
+        "shipping_fee": 30000,
+        "discount_amount": 0,
+        "grand_total": 510000,
+        "currency": "VND"
+      },
+      "status": "delivered",
+      "status_history": [
+        {
+          "status": "delivered",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": "Giao hàng nhanh giúp mình",
+      "ordered_at": "2025-11-01T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "order:GUESTDH004",
+      "type": "order",
+      "schema_version": 1,
+      "legacy_id": "GUESTDH004",
+      "customer": null,
+      "guest_order": true,
+      "assigned_staff_id": null,
+      "receiver": {
+        "name": "Lê Thị Vãng",
+        "phone": "0987654321",
+        "email": "guest4@email.com",
+        "address": "456 Lê Duẩn, Đà Nẵng"
+      },
+      "items": [
+        {
+          "product_id": "G01",
+          "product_name": "Giày Superstar",
+          "variant_id": "CTG01Sz40",
+          "size": "40",
+          "quantity": 1,
+          "unit_price": 750000,
+          "line_total": 750000,
+          "currency": "VND"
+        }
+      ],
+      "shipping": {
+        "method_code": "BD",
+        "method_name": "Bưu điện",
+        "fee": 20000,
+        "currency": "VND",
+        "tracking_code": null,
+        "estimated_delivery_date": "2025-12-09"
+      },
+      "discount": {
+        "code": null,
+        "type": null,
+        "value": 0,
+        "amount": 0,
+        "currency": "VND"
+      },
+      "payment": {
+        "method": "bank_transfer",
+        "legacy_label": "Chuyển khoản",
+        "status": "unpaid",
+        "paid": false
+      },
+      "totals": {
+        "total_quantity": 1,
+        "subtotal": 750000,
+        "shipping_fee": 20000,
+        "discount_amount": 0,
+        "grand_total": 770000,
+        "currency": "VND"
+      },
+      "status": "cancelled",
+      "status_history": [
+        {
+          "status": "cancelled",
+          "at": null,
+          "source": "legacy_migration",
+          "note": "Legacy source stores current status only; original transition timestamp is unavailable."
+        }
+      ],
+      "note": null,
+      "ordered_at": "2025-12-05T00:00:00+07:00",
+      "active": true,
+      "_meta": {
+        "source": "WEBTHOITRANG legacy SQL",
+        "source_tables": [
+          "DON_HANG",
+          "CHI_TIET_DON_HANG",
+          "KHACH_HANG",
+          "MA_GIAM_GIA",
+          "PHUONG_THUC_VAN_CHUYEN"
+        ],
+        "totals_recalculated": true
+      }
+    },
+    {
+      "_id": "_design/domain_validation",
+      "language": "javascript",
+      "validate_doc_update": "function(newDoc, oldDoc, userCtx, secObj) {\n  if (newDoc._deleted === true) { return; }\n  if (newDoc._id && newDoc._id.indexOf('_design/') === 0) { return; }\n\n  var allowedTypes = ['customer','staff','product','voucher','shipping_method','cart','order'];\n  if (!newDoc.type || allowedTypes.indexOf(newDoc.type) === -1) {\n    throw({forbidden: 'type is required and must be a supported document type'});\n  }\n\n  if (newDoc.schema_version !== 1) {\n    throw({forbidden: 'schema_version must be 1'});\n  }\n\n  if (newDoc.type === 'product') {\n    if (!newDoc.legacy_id || !newDoc.name || !newDoc.category) {\n      throw({forbidden: 'product requires legacy_id, name and category'});\n    }\n    if (!Array.isArray(newDoc.variants)) {\n      throw({forbidden: 'product.variants must be an array'});\n    }\n  }\n\n  if (newDoc.type === 'cart') {\n    if (!newDoc.customer_id || !Array.isArray(newDoc.items)) {\n      throw({forbidden: 'cart requires customer_id and items[]'});\n    }\n  }\n\n  if (newDoc.type === 'order') {\n    var statuses = ['pending','confirmed','packing','shipping','delivered','cancelled'];\n    if (statuses.indexOf(newDoc.status) === -1) {\n      throw({forbidden: 'invalid order status'});\n    }\n    if (!newDoc.receiver || !newDoc.receiver.name || !newDoc.receiver.phone || !newDoc.receiver.address) {\n      throw({forbidden: 'order.receiver requires name, phone and address'});\n    }\n    if (!Array.isArray(newDoc.items) || newDoc.items.length === 0) {\n      throw({forbidden: 'order.items must be a non-empty array'});\n    }\n    if (!newDoc.totals || newDoc.totals.grand_total < 0) {\n      throw({forbidden: 'order.totals.grand_total must be >= 0'});\n    }\n    if (!Array.isArray(newDoc.status_history)) {\n      throw({forbidden: 'order.status_history must be an array'});\n    }\n  }\n}"
+    }
+  ]
+}

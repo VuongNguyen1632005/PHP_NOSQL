@@ -1,0 +1,9 @@
+{
+  "selector": {
+    "type": {"$eq": "order"},
+    "delivery_tracking.status": {"$eq": "in_transit"}
+  },
+  "fields": ["_id", "status", "ordered_at", "delivery_tracking.tracking_code", "delivery_tracking.status", "delivery_tracking.history"],
+  "limit": 20,
+  "execution_stats": true
+}

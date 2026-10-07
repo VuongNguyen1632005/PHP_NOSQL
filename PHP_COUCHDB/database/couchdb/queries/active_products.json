@@ -1,0 +1,14 @@
+{
+  "name": "active_products",
+  "description": "Sản phẩm đang kinh doanh, dùng partial Mango index active_products.",
+  "expected_index": "active_products",
+  "request": {
+    "selector": {
+      "type": "product",
+      "active": true
+    },
+    "use_index": ["_design/catalog_indexes", "active_products"],
+    "fields": ["_id", "legacy_id", "name", "category", "active"],
+    "limit": 10
+  }
+}
